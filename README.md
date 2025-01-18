@@ -59,6 +59,32 @@ Homebrew doesn't handle use cases where multiple versions of a language or tool 
 
 ## Tools
 
+### [tmux](https://github.com/tmux/tmux)
+
+> tmux is a terminal multiplexer. It lets you switch easily between several programs in one terminal, detach them (they keep running in the background) and reattach them to a different terminal.
+
+Incredibly useful if your terminal emulator lacks tab support, or you're working on remote hosts over ssh (using a multiplexer like tmux is much better than a whole bunch of ssh connections). Great even as a safety net if you disconnect from a remote host - just reattach to your session and you'll be back where you left off.
+
+### [tpm](https://github.com/tmux-plugins/tpm)
+
+> Installs and loads tmux plugins.
+
+Does what it says on the box. A nice benefit is the installation instructions include the plugin `tmux-sensible`, which besides being some sane defaults for tmux automatically configures tmux for `xterm-256color` support (which `powerlevel10k` requires).
+
+### [dracula](https://github.com/dracula/tmux)
+
+> A dark theme for tmux
+
+The default tmux colour scheme is...not pleasant. This theme is a nice improvement, and in my opinion meshes well with Ghostty's Snazzy theme. But it's a nice dark theme that should blend comfortably with most dark themes. Installable via `tpm`.
+
+Despite being described as just a theme, it also includes a number of out-of-the-box plugins to customize your status bar. I prefer a clean look for my status bar so only enable powerline symbols support:
+
+> **~/.tmux.conf**
+> ```
+> set -g @dracula-plugins 'powerline'
+> set -g @dracula-show-powerline true
+> ```
+
 ### [bat](https://github.com/sharkdp/bat)
 
 > A cat(1) clone with syntax highlighting and Git integration.
@@ -131,6 +157,10 @@ Self-explanatory. Works best if you alias it to `kubectl` (it's basically a tran
 > ```
 
 ## Goodies
+
+### tmux cheat sheet
+
+Getting used to `tmux` can be a bit of a learning curve. Having a cheat sheet handy like [this one](https://tmuxcheatsheet.com) is pretty helpful while you're getting used to the ropes.
 
 ### Editor environment hook
 

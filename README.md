@@ -156,6 +156,12 @@ Self-explanatory. Works best if you alias it to `kubectl` (it's basically a tran
 > alias kubectl='kubecolor'
 > ```
 
+### [kubectx](https://github.com/ahmetb/kubectx)
+
+> kubectx is a tool to switch between contexts (clusters) on kubectl faster.
+
+My `~/.kube/config` is primarily built on the output from `aws eks update-kubeconfig`, and so my contexts are named after ARNs which aren't simple to remember or type out each time I want to switch context. Using this with `fzf` (above) is a must-have, as there's an automatic integration that enables fuzzy search on context names. This is a straight up timesaver for me.
+
 ## Goodies
 
 ### tmux cheat sheet
@@ -193,3 +199,64 @@ You can also create a second variant that switches out the `git branch -d` for `
 >     br-delete-useless-force = "!f(){\git branch | grep -v "master" | grep -v ^* | xargs git branch -D;\}; f"
 > ```
 
+## Honourable Mentions
+
+*Items in this section are less frequently used, or I think are interesting but haven't quite made it into my day-to-day workflow.*
+
+### [trurl](https://github.com/curl/trurl)
+
+> Command line tool for URL parsing and manipulation
+
+Part of the cURL project. Useful if you need to parse/manipulate URLs from a terminal or shell script.
+
+### [runlike](https://github.com/lavie/runlike)
+
+> You give it a docker container, it outputs the command line necessary to run another one just like it, along with all those pesky options (ports, links, volumes, ...). It's a real time saver for those that normally deploy their docker containers via some CM tool like Ansible/Chef and then find themselves needing to manually re-run some container.
+
+Haven't had the need for this one yet, but I've been keeping it in my back pocket in case I ever need to.
+
+### [dive](https://github.com/wagoodman/dive)
+
+> A tool for exploring a docker image, layer contents, and discovering ways to shrink the size of your Docker/OCI image.
+
+Great for 'taking apart' a Docker image and seeing whats inside, layer by layer - without even needing to run it.
+
+### [helm-release-plugin](https://github.com/JovianX/helm-release-plugin)
+
+> helm-release is a Helm 3 plugin that allows running operations on Helm releases (deployed Helm charts).
+
+The key feature I like of this plugin is the `helm release pull` command - like `runlike` but for Helm charts. Takes a deployed release and re-creates a Helm chart from it. I've needed to do this a couple of times - much easier than trying to work backwards yourself.
+
+### [direnv](https://github.com/direnv/direnv)
+
+> direnv is an extension for your shell. It augments existing shells with a new feature that can load and unload environment variables depending on the current directory.
+
+Useful for projects that need specific environment variables to run but you don't want to clutter your global environment with them, or they conflict with other projects/tools.
+
+### [posting](https://github.com/darrenburns/posting)
+
+> Posting is an HTTP client, not unlike Postman and Insomnia. As a TUI application, it can be used over SSH and enables efficient keyboard-centric workflows. Your requests are stored locally in simple YAML files, so they're easy to read and version control.
+
+This one is new to my toolbox and so I need to explore it some more before I can say if it's a keeper - but it's a nice looking TUI, supports OpenAPI specs (very nice!), importing cURL requests and environments/variables. I need to see how easy it is to copy response bodies/headers from it, though - as that's something I do frequently enough where it'd be a pain without it.
+
+### [ctop](https://github.com/bcicen/ctop)
+
+> ctop provides a concise and condensed overview of real-time metrics for multiple containers
+
+It's `top`, but for containers. I've found that `k9s` displays enough about metrics to be sufficient for my everyday work, but I do like the visualization here.
+
+### [lazygit](https://github.com/jesseduffield/lazygit)
+
+I need to share its 'elevator pitch':
+
+> Rant time: You've heard it before, git is powerful, but what good is that power when everything is so damn hard to do? Interactive rebasing requires you to edit a goddamn TODO file in your editor? Are you kidding me? To stage part of a file you need to use a command line program to step through each hunk and if a hunk can't be split down any further but contains code you don't want to stage, you have to edit an arcane patch file by hand? Are you KIDDING me?! Sometimes you get asked to stash your changes when switching branches only to realise that after you switch and unstash that there weren't even any conflicts and it would have been fine to just checkout the branch directly? YOU HAVE GOT TO BE KIDDING ME!
+>
+> If you're a mere mortal like me and you're tired of hearing how powerful git is when in your daily life it's a powerful pain in your ass, lazygit might be for you.
+
+I've yet to find any sort of UI I would rather use over plain ol' git commands but I think this is an interesting candidate striking the balance between taking some of the pain away from git while avoiding oversimplifying it too much.
+
+### [lazydocker](https://github.com/jesseduffield/lazydocker)
+
+> A simple terminal UI for both docker and docker-compose, written in Go
+
+From the same author as `lazygit`. I don't work with Docker containers directly enough these days to make much use of this tool, but I can see this being incredibly useful for those who do (or home labs...)

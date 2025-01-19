@@ -3,6 +3,45 @@
 This repository (and README) file is a collection of terminal configuration, shell scripts and otherwise just useful
 tools/tricks I've come across which I find useful in my day-to-day work.
 
+## Table of Contents
+
+- [Terminal Emulator](#terminal-emulator)
+  - [Ghostty](#ghostty)
+- [Shell Extensions](#shell-extensions)
+  - [Oh My Zsh](#oh-my-zsh)
+  - [Powerlevel10k](#powerlevel10k)
+- [Package Management](#package-management)
+  - [Homebrew](#homebrew)
+  - [mise-en-place](#mise-en-place)
+- [Tools](#tools)
+  - [tmux](#tmux)
+  - [tpm](#tpm)
+  - [dracula](#dracula)
+  - [bat](#bat)
+  - [ripgrep](#ripgrep)
+  - [eza](#eza)
+  - [fzf](#fzf)
+  - [xh](#xh)
+  - [delta](#delta)
+  - [k9s](#k9s)
+  - [cdebug](#cdebug)
+  - [kubecolor](#kubecolor)
+  - [kubectx](#kubectx)
+- [Goodies](#goodies)
+  - [tmux cheat sheet](#tmux-cheat-sheet)
+  - [Editor environment hook](#editor-environment-hook)
+  - [Clean up local git branches](#clean-up-local-git-branches)
+- [Honourable Mentions](#honourable-mentions)
+  - [trurl](#trurl)
+  - [runlike](#runlike)
+  - [dive](#dive)
+  - [helm-release-plugin](#helm-release-plugin)
+  - [direnv](#direnv)
+  - [posting](#posting)
+  - [ctop](#ctop)
+  - [lazygit](#lazygit)
+  - [lazydocker](#lazydocker)
+
 ## Terminal Emulator
 
 ### [Ghostty](http://ghostty.org)

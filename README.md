@@ -20,7 +20,7 @@ tools/tricks I've come across which I find useful in my day-to-day work.
   - [bat](#bat)
   - [ripgrep](#ripgrep)
   - [eza](#eza)
-  - [fzf](#fzf)
+  - [television](#television)
   - [xh](#xh)
   - [delta](#delta)
   - [k9s](#k9s)
@@ -154,11 +154,18 @@ I like to wholesale replace `ls` with this via an alias:
 
 (I can't imagine going back to plain ol' `ls` now.)
 
-### [fzf](https://github.com/junegunn/fzf)
+### [television](https://github.com/alexpasmantier/television)
 
-> fzf is a general-purpose command-line fuzzy finder. It's an interactive filter program for any kind of list; files, command history, processes, hostnames, bookmarks, git commits, etc. It implements a "fuzzy" matching algorithm, so you can quickly type in patterns with omitted characters and still get the results you want.
+> Television is a fast and versatile fuzzy finder TUI. It lets you quickly search through any kind of data source (files, git repositories, environment variables, docker images, you name it) using a fuzzy matching algorithm and is designed to be easily extensible.
 
-Lots of versatility here but frankly I primarily use this for its much better fuzzy history search (`CTRL+R`).
+This is a recent replacement for `fzf` which I like a lot (especially for fuzzy history search via `CTRL+R`), but with some nice extra functionality including built-in preview support and easy extensibility via "channels".
+
+I prefer the `television` theme (not to be confused with the out of the box `default` theme):
+
+> **~/.config/television/config**
+> ```
+> theme = "television"
+> ```
 
 ### [xh](https://github.com/ducaale/xh)
 
@@ -200,6 +207,12 @@ Self-explanatory. Works best if you alias it to `kubectl` (it's basically a tran
 > kubectx is a tool to switch between contexts (clusters) on kubectl faster.
 
 My `~/.kube/config` is primarily built on the output from `aws eks update-kubeconfig`, and so my contexts are named after ARNs which aren't simple to remember or type out each time I want to switch context. Using this with `fzf` (above) is a must-have, as there's an automatic integration that enables fuzzy search on context names. This is a straight up timesaver for me.
+
+### [uv](https://docs.astral.sh/uv/)
+
+> A single tool to replace pip, pip-tools, pipx, poetry, pyenv, twine, virtualenv, and more.
+
+Combines a number of Python tools into a single Rust-based one. Great in combination with [mise-en-place](#mise-en-place) since it's independent of a specific Python version/installation, so you can switch between multiple versions as necessary and `uv` will handle the rest. You _can_ use it to manage installations as well, although I stick with `mise` for that purpose.
 
 ## Goodies
 
@@ -276,7 +289,7 @@ Useful for projects that need specific environment variables to run but you don'
 
 > Posting is an HTTP client, not unlike Postman and Insomnia. As a TUI application, it can be used over SSH and enables efficient keyboard-centric workflows. Your requests are stored locally in simple YAML files, so they're easy to read and version control.
 
-This one is new to my toolbox and so I need to explore it some more before I can say if it's a keeper - but it's a nice looking TUI, supports OpenAPI specs (very nice!), importing cURL requests and environments/variables. I need to see how easy it is to copy response bodies/headers from it, though - as that's something I do frequently enough where it'd be a pain without it.
+This one is new to my toolbox and so I need to explore it some more before I can say if it's a keeper - but it's a nice looking TUI, supports OpenAPI specs (very nice!), importing cURL requests and environments/variables.
 
 ### [ctop](https://github.com/bcicen/ctop)
 

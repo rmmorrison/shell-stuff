@@ -27,6 +27,9 @@ tools/tricks I've come across which I find useful in my day-to-day work.
   - [cdebug](#cdebug)
   - [kubecolor](#kubecolor)
   - [kubectx](#kubectx)
+  - [uv](#uv)
+  - [f(x)](#fx)
+  - [jq](#jq)
 - [Goodies](#goodies)
   - [tmux cheat sheet](#tmux-cheat-sheet)
   - [Editor environment hook](#editor-environment-hook)
@@ -214,6 +217,18 @@ My `~/.kube/config` is primarily built on the output from `aws eks update-kubeco
 
 Combines a number of Python tools into a single Rust-based one. Great in combination with [mise-en-place](#mise-en-place) since it's independent of a specific Python version/installation, so you can switch between multiple versions as necessary and `uv` will handle the rest. You _can_ use it to manage installations as well, although I stick with `mise` for that purpose.
 
+### <a name="fx"></a>[f(x)](https://github.com/antonmedv/fx)
+
+> Fx is a dual-purpose command-line tool tailored for JSON, providing both a terminal-based JSON viewer and a JSON processing utility.
+
+Very useful when combined with other tools like `xh` to quickly process and visualize a JSON document. I've yet to use it as a processor, since I've normally relied on...
+
+### [jq](https://github.com/jqlang/jq)
+
+> jq is a lightweight and flexible command-line JSON processor akin to sed,awk,grep, and friends for JSON data. It's written in portable C and has zero runtime dependencies, allowing you to easily slice, filter, map, and transform structured data.
+
+Makes processing JSON at the terminal or in a script a breeze. Ubiquitous enough that you can also just ask an LLM how to process a document and it'll spit out an accurate or close-enough `jq` command to do it.
+
 ## Goodies
 
 ### tmux cheat sheet
@@ -290,6 +305,13 @@ Useful for projects that need specific environment variables to run but you don'
 > Posting is an HTTP client, not unlike Postman and Insomnia. As a TUI application, it can be used over SSH and enables efficient keyboard-centric workflows. Your requests are stored locally in simple YAML files, so they're easy to read and version control.
 
 This one is new to my toolbox and so I need to explore it some more before I can say if it's a keeper - but it's a nice looking TUI, supports OpenAPI specs (very nice!), importing cURL requests and environments/variables.
+
+It also integrates with [`f(x)`](#fx) for visualizing JSON with a little configuration:
+
+> **~/.config/posting/config.yaml**
+> ```
+> pager_json: fx
+> ```
 
 ### [ctop](https://github.com/bcicen/ctop)
 

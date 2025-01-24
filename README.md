@@ -85,33 +85,26 @@ This is a configuration framework for `zsh` that's "batteries-included" and help
 
 I use a number of built-in plugins to enhance my shell:
 
-* `aws`: completion support for awscli v2 and a few utilities to manage AWS profiles/regions and display them in the prompt
-* `docker`: adds auto-completion and aliases for Docker
 * `eza`: aliases that invoke the `eza` utility rather than `ls`
-* `git`: provides many aliases and a few useful functions
-* `helm`: completion and aliases for Helm, the Kubernetes package manager
-* `kubectl`: adds completion for the Kubernetes cluster manager, as well as some aliases for common kubectl commands
 * `mise`: adds integration with mise (formerly rtx), a runtime executor compatible with npm, nodenv, pyenv, etc.
 * `ssh`: provides host completion based off of your `~/.ssh/config` file, and adds some utility functions to work with SSH keys
 * `ssh-agent`: automatically starts `ssh-agent` to set up and load whichever credentials you want for ssh connections
-* `vscode`: useful aliases to simplify the interaction between the command line and VS Code or VSCodium editor
 * `zsh-syntax-highlighting`: fish-style syntax highlighting as commands are being typed
 
 > *~/.zshrc*
 > ```
-> plugins(aws docker eza git helm kubectl mise ssh ssh-agent vscode zsh-syntax-highlighting)
+> plugins(eza mise ssh ssh-agent zsh-syntax-highlighting)
 > ```
 
-There are a *lot* of built-in plugins available for `oh-my-zsh`, and it's worth reading over the [entire list](https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins) to see if there are any others that would suit your environment.
+There are a *lot* of built-in plugins available for `oh-my-zsh`, and it's worth reading over the [entire list](https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins) to see if there are any others that would suit your environment. Note that plugins do slow down start performance, so it's best to run only what you need/is actually useful for you.
 
 (`zsh-syntax-highlighting` isn't included with `oh-my-zsh` and is [available here](https://github.com/zsh-users/zsh-syntax-highlighting).)
 
-If using the `ssh-agent` plugin, I also add the following to my `~/.zshrc` to silence its output (these must appear before `source $ZSH/oh-my-zsh.sh`):
+If using the `ssh-agent` plugin, I also add the following to my `~/.zshrc` to silence its output (this must appear before `source $ZSH/oh-my-zsh.sh`):
 
 > *~/.zshrc*
 > ```
 > zstyle :omz:plugins:ssh-agent quiet yes
-> zstyle :omz:plugins:ssh-agent lazy yes
 > ```
 
 ### [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
@@ -137,6 +130,8 @@ The _standard_ package manager for macOS. Simple to use, and doesn't clutter you
 `mise` addresses this gap by not only handling multiple versions of tools but seamlessly allows you to switch between them, either manually via a `mise` command or by simply placing a `mise.toml` file with a specific tool and version where it's needed. `mise` hooks into the shell and will automatically ensure the correct tool and version is on your `PATH` as you navigate around the filesystem.
 
 You can also include environment variables in `mise.toml` and `mise` will load/unload them as you move across directories, replacing the need for a separate utility like `direnv`.
+
+(Note that if you're using `oh-my-zsh` and the `mise` plugin, the installation step to add `mise activate` to your `~/.zshrc` is unnecessary.)
 
 ## Tools
 

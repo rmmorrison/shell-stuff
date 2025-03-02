@@ -220,11 +220,11 @@ Otherwise, you can alias `ls` to `eza`:
 
 This is a recent replacement for `fzf` which I like a lot (especially for fuzzy history search via `CTRL+R`), but with some nice extra functionality including built-in preview support and easy extensibility via "channels".
 
-I prefer the `television` theme (not to be confused with the out of the box `default` theme):
+I prefer the `tokyonight` theme:
 
 > *~/.config/television/config*
 > ```
-> theme = "television"
+> theme = "tokyonight"
 > ```
 
 ### [xh](https://github.com/ducaale/xh)
@@ -238,6 +238,15 @@ I like this for firing off quick HTTP requests from a terminal. I especially lik
 > A syntax-highlighting pager for git, diff, and grep output
 
 I primarily work with `git` from the CLI and this tool makes reading diffs _so much better_.
+
+You'll need to configure it as the default pager for `git`:
+
+```
+git config --global core.pager delta
+git config --global interactive.diffFilter 'delta --color-only'
+git config --global delta.navigate true
+git config --global merge.conflictStyle zdiff3
+```
 
 ### [k9s](https://github.com/derailed/k9s)
 
